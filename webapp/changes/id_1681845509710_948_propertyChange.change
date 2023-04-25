@@ -1,0 +1,41 @@
+{
+    "fileName": "id_1681845509710_948_propertyChange",
+    "fileType": "change",
+    "changeType": "propertyChange",
+    "moduleName": "",
+    "reference": "dellavolpe.com.br.zuifipgtoavulso",
+    "packageName": "",
+    "content": {
+        "property": "width",
+        "newValue": "120px"
+    },
+    "selector": {
+        "id": "dellavolpe.com.br.zuifipgtoavulso::sap.suite.ui.generic.template.ListReport.view.ListReport::PagamentoAvulso--listReport-MeioPagtoTxt",
+        "idIsLocal": false,
+        "type": "sap.m.Column"
+    },
+    "layer": "CUSTOMER_BASE",
+    "texts": {},
+    "namespace": "apps/dellavolpe.com.br.zuifipgtoavulso/changes/",
+    "projectId": "",
+    "creation": 1681845509710,
+    "originalLanguage": "",
+    "support": {
+        "generator": "changeUtils: SAPFioriTools",
+        "service": "",
+        "user": "",
+        "sapui5Version": "1.84.24",
+        "sourceChangeFileName": "",
+        "compositeCommand": ""
+    },
+    "oDataInformation": {},
+    "dependentSelector": {},
+    "validAppVersions": {
+        "from": "0.0.1",
+        "to": "0.0.1",
+        "creation": "0.0.1"
+    },
+    "jsOnly": false,
+    "variantReference": "",
+    "appDescriptorChange": false
+}

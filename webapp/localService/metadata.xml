@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="http://dev:8070/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='S4ALIAS')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://dev:8070/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='S4ALIAS')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://dev:8070/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='S4ALIAS')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://dev:8070/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='S4ALIAS')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://dev:8070/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='S4ALIAS')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://dev:8070/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='S4ALIAS')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://dev:8070/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='S4ALIAS')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://dev:8070/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='S4ALIAS')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://dev:8070/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='S4ALIAS')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zui_pagamento_avulso" xml:lang="pt" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="BlartVHType" sap:label="Search Help BLART para Pagamento Avulso" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DomainValue"/>
+                </Key>
+                <Property Name="DomainValue" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase" sap:text="DomainText" sap:label="Tipo de documento"/>
+                <Property Name="DomainText" Type="Edm.String" MaxLength="20" sap:label="Denominação" sap:quickinfo="Denominação do tipo de documento"/>
+            </EntityType>
+            <EntityType Name="PagamentoAvulsoType" sap:label="Pagamento Avulso" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Bukrs"/>
+                    <PropertyRef Name="Belnr"/>
+                    <PropertyRef Name="Gjahr"/>
+                    <PropertyRef Name="Buzei"/>
+                    <PropertyRef Name="Ebeln"/>
+                    <PropertyRef Name="Bupla"/>
+                </Key>
+                <Property Name="meio_pagto_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pagamento_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Empresa"/>
+                <Property Name="Belnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Nº documento" sap:quickinfo="Nº documento de um documento contábil"/>
+                <Property Name="Gjahr" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Exercício"/>
+                <Property Name="Buzei" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative" sap:label="Item" sap:quickinfo="Nº linha de lançamento no documento contábil"/>
+                <Property Name="Ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Documento de compras" sap:quickinfo="Nº do documento de compras"/>
+                <Property Name="Bupla" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Loc.negócios" sap:quickinfo="Local de negócios"/>
+                <Property Name="Zzvalefreteimpresso" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="VF Impresso" sap:quickinfo="Flag geral"/>
+                <Property Name="Zzvalefrete" Type="Edm.String" MaxLength="18" sap:display-format="UpperCase" sap:label="VF ID"/>
+                <Property Name="BelnrPgto" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Pgto 1" sap:quickinfo="Nº documento de um documento contábil"/>
+                <Property Name="BelnrPgto2" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Pgto 2" sap:quickinfo="Nº documento de um documento contábil"/>
+                <Property Name="Bldat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Data do documento" sap:quickinfo="Data no documento"/>
+                <Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:text="Znamelifnr" sap:label="Fornecedor" sap:quickinfo="Nº conta do fornecedor"/>
+                <Property Name="Dmbtr" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="HWaers" sap:label="Montante em MI" sap:quickinfo="Montante em moeda interna"/>
+                <Property Name="Wrbtr" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="HWaers" sap:label="Montante" sap:quickinfo="Montante em moeda do documento"/>
+                <Property Name="Kzbtr" Type="Edm.Decimal" Precision="14" Scale="3" sap:unit="HWaers" sap:label="Redução original" sap:quickinfo="Montante original de redução em moeda interna"/>
+                <Property Name="HBudat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Data de lançamento" sap:quickinfo="Data de lançamento no documento"/>
+                <Property Name="HBlart" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:text="BlartTxt" sap:label="Tipo de documento"/>
+                <Property Name="Sgtxt" Type="Edm.String" MaxLength="50" sap:label="Texto" sap:quickinfo="Texto do item"/>
+                <Property Name="Saknr" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Conta do Razão" sap:quickinfo="Nº conta do Razão"/>
+                <Property Name="Hkont" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Conta do Razão" sap:quickinfo="Conta do Razão da contabilidade geral"/>
+                <Property Name="Kunnr" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Cliente" sap:quickinfo="Nº cliente"/>
+                <Property Name="Filkd" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Conta da filial" sap:quickinfo="Nº conta da filial"/>
+                <Property Name="Hzuon" Type="Edm.String" MaxLength="18" sap:label="Atribuiç.RzE" sap:quickinfo="Nº atribuição para contas do Razão Especial"/>
+                <Property Name="Zfbdt" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Dt.base prazo pgto." sap:quickinfo="Data base para cálculo do vencimento"/>
+                <Property Name="HWaers" Type="Edm.String" MaxLength="5" sap:label="Moeda" sap:quickinfo="Código da moeda" sap:semantics="currency-code"/>
+                <Property Name="augbl" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Doc.compensação" sap:quickinfo="Nº documento de compensação"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="7" sap:label="Status"/>
+                <Property Name="Znamelifnr" Type="Edm.String" MaxLength="35" sap:label="Nome" sap:quickinfo="Nome 1"/>
+                <Property Name="BlartTxt" Type="Edm.String" MaxLength="20" sap:label="Denominação" sap:quickinfo="Denominação do tipo de documento"/>
+                <Property Name="MeioPagtoDesc" Type="Edm.String" MaxLength="5"/>
+                <Property Name="MeioPagto" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Meio de pagamento"/>
+                <Property Name="meio_pagto" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Meio de pagamento"/>
+                <Property Name="MeioPagtoTxt" Type="Edm.String" MaxLength="255" sap:label="Meio Pgto" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="cds_zui_pagamento_avulso_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="BlartVH" EntityType="cds_zui_pagamento_avulso.BlartVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="PagamentoAvulso" EntityType="cds_zui_pagamento_avulso.PagamentoAvulsoType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <FunctionImport Name="meio_pagto" ReturnType="cds_zui_pagamento_avulso.PagamentoAvulsoType" EntitySet="PagamentoAvulso" m:HttpMethod="POST" sap:action-for="cds_zui_pagamento_avulso.PagamentoAvulsoType" sap:applicable-path="meio_pagto_ac">
+                    <Parameter Name="Bukrs" Type="Edm.String" Mode="In" MaxLength="4" sap:label="Empresa"/>
+                    <Parameter Name="Belnr" Type="Edm.String" Mode="In" MaxLength="10" sap:label="Nº documento"/>
+                    <Parameter Name="Gjahr" Type="Edm.String" Mode="In" MaxLength="4" sap:label="Exercício"/>
+                    <Parameter Name="Buzei" Type="Edm.String" Mode="In" MaxLength="3" sap:label="Item"/>
+                    <Parameter Name="Ebeln" Type="Edm.String" Mode="In" MaxLength="10" sap:label="Documento de compras"/>
+                    <Parameter Name="Bupla" Type="Edm.String" Mode="In" MaxLength="4" sap:label="Loc.negócios"/>
+                    <Parameter Name="meio_pagto" Type="Edm.String" Mode="In" MaxLength="1" Nullable="true" sap:value-list="fixed-values" sap:label="Meio de pagamento"/>
+                    <Parameter Name="cheque" Type="Edm.String" Mode="In" MaxLength="20" Nullable="true" sap:label="Nº Cheque"/>
+                    <Parameter Name="chequevisible" Type="Edm.Boolean" Mode="In" Nullable="true" sap:label="Código"/>
+                </FunctionImport>
+                <FunctionImport Name="Pagamento" ReturnType="cds_zui_pagamento_avulso.PagamentoAvulsoType" EntitySet="PagamentoAvulso" m:HttpMethod="POST" sap:action-for="cds_zui_pagamento_avulso.PagamentoAvulsoType" sap:applicable-path="Pagamento_ac">
+                    <Parameter Name="Bukrs" Type="Edm.String" Mode="In" MaxLength="4" sap:label="Empresa"/>
+                    <Parameter Name="Belnr" Type="Edm.String" Mode="In" MaxLength="10" sap:label="Nº documento"/>
+                    <Parameter Name="Gjahr" Type="Edm.String" Mode="In" MaxLength="4" sap:label="Exercício"/>
+                    <Parameter Name="Buzei" Type="Edm.String" Mode="In" MaxLength="3" sap:label="Item"/>
+                    <Parameter Name="Ebeln" Type="Edm.String" Mode="In" MaxLength="10" sap:label="Documento de compras"/>
+                    <Parameter Name="Bupla" Type="Edm.String" Mode="In" MaxLength="4" sap:label="Loc.negócios"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="cds_zui_pagamento_avulso.cds_zui_pagamento_avulso_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="None"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_pagamento_avulso.cds_zui_pagamento_avulso_Entities/PagamentoAvulso" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>meio_pagto_ac</PropertyPath>
+                                <PropertyPath>Pagamento_ac</PropertyPath>
+                                <PropertyPath>MeioPagtoTxt</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>meio_pagto_ac</PropertyPath>
+                                <PropertyPath>Pagamento_ac</PropertyPath>
+                                <PropertyPath>MeioPagtoTxt</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://dev:8070/sap/opu/odata/sap/ZGW_PGTO_AVULSO_V2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://dev:8070/sap/opu/odata/sap/ZGW_PGTO_AVULSO_V2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

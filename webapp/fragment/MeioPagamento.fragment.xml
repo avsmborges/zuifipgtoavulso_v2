@@ -1,0 +1,66 @@
+<core:FragmentDefinition 
+ xmlns:uxap="sap.uxap"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:smartForm="sap.ui.comp.smartform"
+    xmlns:smartField="sap.ui.comp.smartfield"
+    xmlns="sap.m" 
+    xmlns:u="sap.ui.unified"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" >
+   <Dialog id = "MeioPgtoDialog"
+      title="Alterar Meio de Pagamento "
+      >
+      <content>
+      
+
+ <VBox id="VBox">
+        <smartForm:SmartForm editable="true"  id="smartFormColumn" app:defaultCheckBoxDisplayBehaviour="OnOff" app:defaultDropDownDisplayBehaviour="idAndDescription" editTogglable="false">
+            <smartForm:Group id="_IDGenGroup1">
+                <smartForm:GroupElement id="_IDGenGroupElement1">
+                    <smartField:SmartField id="meio_pagto" value="{MeioPagto}" />
+                </smartForm:GroupElement>
+             </smartForm:Group>
+        </smartForm:SmartForm>
+  <smartTable:SmartTable
+  width="400px"
+            id="LineItemsSmartTable"
+            entitySet="Cheques"
+            tableBindingPath="oModelMNA>/"
+            smartFilterId="smartFilterBar"
+            tableType="Table"
+            useExportToExcel="false"
+            app:useSmartField="true"
+            useVariantManagement="false"
+            useTablePersonalisation="false"
+            header="Cheques"
+            showRowCount="true"
+            enableAutoBinding="true"
+            editable="true"
+            app:useSmartToggle="true"
+            visible="{oViewModel>/tableVisible}"
+        >
+                    <smartTable:customToolbar>
+                <OverflowToolbar id="OverflowToolbar" design="Transparent">
+                    <OverflowToolbarButton id="addBtn" icon="sap-icon://add" press="onAddRow" tooltip="Adicionar Rateio" />
+                    <OverflowToolbarButton id="delBtn" icon="sap-icon://delete" press="onDelete" tooltip="Remover Rateio" />
+                </OverflowToolbar>
+            </smartTable:customToolbar>
+            <smartTable:layoutData>
+                <FlexItemData id="FlexItemData" growFactor="1" baseSize="0%" />
+            </smartTable:layoutData>
+        </smartTable:SmartTable>
+
+
+       
+    </VBox>
+    </content>
+  <beginButton >
+  <Button text="Salvar" id="btnSave"></Button>
+    </beginButton>
+  <endButton >
+  <Button text="Cancelar" id="btnCancel"></Button>
+    </endButton>
+   </Dialog>
+</core:FragmentDefinition>
